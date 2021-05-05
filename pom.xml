@@ -59,7 +59,7 @@
     <netty.version>4.0.29.Final</netty.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <py4j.version>0.9</py4j.version>
-    <scala-2.10.version>2.10.4</scala-2.10.version>
+    <scala-2.10.version>2.13.5</scala-2.10.version>
     <scala-2.11.version>2.11.8</scala-2.11.version>
     <scala.binary.version>2.10</scala.binary.version>
     <scala.version>${scala-2.10.version}</scala.version>
@@ -813,9 +813,9 @@
             </goals>
             <configuration>
               <target>
-                <delete file="${project.build.directory}/unit-tests.log" quiet="true" />
-                <delete dir="${project.build.directory}/jacoco" quiet="true" />
-                <delete dir="${project.build.directory}/tmp" quiet="true" />
+                <delete file="${project.build.directory}/unit-tests.log" quiet="true"/>
+                <delete dir="${project.build.directory}/jacoco" quiet="true"/>
+                <delete dir="${project.build.directory}/tmp" quiet="true"/>
               </target>
             </configuration>
           </execution>
@@ -828,7 +828,7 @@
             </goals>
             <configuration>
               <target>
-                <mkdir dir="${project.build.directory}/tmp" />
+                <mkdir dir="${project.build.directory}/tmp"/>
               </target>
             </configuration>
           </execution>
@@ -844,18 +844,11 @@
             </goals>
             <configuration>
               <target>
-                <copy file="${execution.root}/scalastyle.xml"
-                  tofile="${project.build.directory}/scalastyle.xml" />
-                <replace file="${project.build.directory}/scalastyle.xml"
-                  token="{{COPYRIGHT_HEADER}}"
-                  value="${copyright.header}" />
-                <copy file="${execution.root}/checkstyle.xml"
-                  tofile="${project.build.directory}/checkstyle.xml" />
-                <echo file="${project.build.directory}/checkstyle.header"
-                  message="${copyright.header}" />
-                <replace file="${project.build.directory}/checkstyle.xml"
-                  token="{{HEADER_FILE}}"
-                  value="${project.build.directory}/checkstyle.header" />
+                <copy file="${execution.root}/scalastyle.xml" tofile="${project.build.directory}/scalastyle.xml"/>
+                <replace file="${project.build.directory}/scalastyle.xml" token="{{COPYRIGHT_HEADER}}" value="${copyright.header}"/>
+                <copy file="${execution.root}/checkstyle.xml" tofile="${project.build.directory}/checkstyle.xml"/>
+                <echo file="${project.build.directory}/checkstyle.header" message="${copyright.header}"/>
+                <replace file="${project.build.directory}/checkstyle.xml" token="{{HEADER_FILE}}" value="${project.build.directory}/checkstyle.header"/>
               </target>
             </configuration>
           </execution>
