@@ -42,9 +42,9 @@
   </organization>
 
   <properties>
-    <hadoop.version>2.7.3</hadoop.version>
+    <hadoop.version>3.3.1</hadoop.version>
     <hadoop.scope>compile</hadoop.scope>
-    <spark.version>1.6.2</spark.version>
+    <spark.version>2.0.0</spark.version>
     <commons-codec.version>1.9</commons-codec.version>
     <httpclient.version>4.5.2</httpclient.version>
     <httpcore.version>4.4.4</httpcore.version>
@@ -813,9 +813,9 @@
             </goals>
             <configuration>
               <target>
-                <delete file="${project.build.directory}/unit-tests.log" quiet="true" />
-                <delete dir="${project.build.directory}/jacoco" quiet="true" />
-                <delete dir="${project.build.directory}/tmp" quiet="true" />
+                <delete file="${project.build.directory}/unit-tests.log" quiet="true"/>
+                <delete dir="${project.build.directory}/jacoco" quiet="true"/>
+                <delete dir="${project.build.directory}/tmp" quiet="true"/>
               </target>
             </configuration>
           </execution>
@@ -828,7 +828,7 @@
             </goals>
             <configuration>
               <target>
-                <mkdir dir="${project.build.directory}/tmp" />
+                <mkdir dir="${project.build.directory}/tmp"/>
               </target>
             </configuration>
           </execution>
@@ -844,18 +844,11 @@
             </goals>
             <configuration>
               <target>
-                <copy file="${execution.root}/scalastyle.xml"
-                  tofile="${project.build.directory}/scalastyle.xml" />
-                <replace file="${project.build.directory}/scalastyle.xml"
-                  token="{{COPYRIGHT_HEADER}}"
-                  value="${copyright.header}" />
-                <copy file="${execution.root}/checkstyle.xml"
-                  tofile="${project.build.directory}/checkstyle.xml" />
-                <echo file="${project.build.directory}/checkstyle.header"
-                  message="${copyright.header}" />
-                <replace file="${project.build.directory}/checkstyle.xml"
-                  token="{{HEADER_FILE}}"
-                  value="${project.build.directory}/checkstyle.header" />
+                <copy file="${execution.root}/scalastyle.xml" tofile="${project.build.directory}/scalastyle.xml"/>
+                <replace file="${project.build.directory}/scalastyle.xml" token="{{COPYRIGHT_HEADER}}" value="${copyright.header}"/>
+                <copy file="${execution.root}/checkstyle.xml" tofile="${project.build.directory}/checkstyle.xml"/>
+                <echo file="${project.build.directory}/checkstyle.header" message="${copyright.header}"/>
+                <replace file="${project.build.directory}/checkstyle.xml" token="{{HEADER_FILE}}" value="${project.build.directory}/checkstyle.header"/>
               </target>
             </configuration>
           </execution>
@@ -992,7 +985,7 @@
         </property>
       </activation>
       <properties>
-        <spark.version>1.6.2</spark.version>
+        <spark.version>2.0.0</spark.version>
       </properties>
     </profile>
 
@@ -1004,7 +997,7 @@
         </property>
       </activation>
       <properties>
-        <spark.version>2.0.1</spark.version>
+        <spark.version>2.0.0</spark.version>
       </properties>
     </profile>
 
@@ -1016,7 +1009,7 @@
         </property>
       </activation>
       <properties>
-        <spark.version>2.1.0</spark.version>
+        <spark.version>2.0.0</spark.version>
       </properties>
     </profile>
 
